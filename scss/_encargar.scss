@@ -1,0 +1,112 @@
+@mixin centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centrar--columna{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner__pedidos{
+    @include mediaq(md){
+     padding-top: 40px;       
+    }
+    width: 100%;
+    background-image: url("../images/envios-fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include centrar;
+    flex-wrap: wrap;
+
+    .pedido{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        backdrop-filter: blur(3px);
+    
+        form{
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            background-color: #2D2D2D;
+            border-radius: 40px;
+
+            .completar{
+                background: none;
+                padding: 15px 0;
+                color: white;
+                border: 1px solid #d1d1d1;
+                margin-bottom: 10px;
+
+                &:placeholder-shown{
+                    padding-left: 10px;
+                }
+            }
+
+            .options__form{
+                
+                @include mediaq(sm){
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center;
+                 margin-bottom: 20px;           
+                }
+                
+                .opciones{
+                    margin: 20px 0 25px 0;
+                }
+
+                label{
+                    text-transform: uppercase;
+                    padding: 0 10px;
+                    color: white;
+                }
+            }
+
+            textarea{
+                resize: none;
+                background: #191919;
+                border: none;
+                padding: 20px 0px 0px 20px;
+                color: #d1d1d1;
+            }
+
+            .enviar{
+                margin-top: 20px;
+                padding: 20px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                background-color: #42cf01;
+                border: none;
+                color: white;
+                text-transform: uppercase;
+                font-weight: 800;
+            }
+        }
+    }
+}
+
+.mapa{
+    width: 100%;
+    text-align: center;
+
+    h2{
+        
+        @include mediaq(sm){
+         font-size: 1.5em;           
+        }
+        padding: 40px;
+        margin-bottom: 20px;
+        font-family: map-get($map: $logo, $key: letra);
+        color: map-get($map: $logo, $key: color);
+        font-size: 2em;
+        background-color: #191919;
+    }
+}

@@ -1,0 +1,89 @@
+
+@mixin centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centrar--columna{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner__pizzas{
+    background-image: url("../images/fondo-pizza.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    @include centrar;
+    flex-wrap: wrap;
+
+    .pizzas__txt{
+        backdrop-filter: blur(3px);
+        width: 100%;
+        height: 100%;
+        @include centrar;
+        
+        .pizzas__title{
+            @include mediaq(sm){
+                font-size: 3em;
+            }
+            font-size: 6em;
+            color: transparent;
+            font-family: $letra;
+            -webkit-text-stroke: 2px white;
+        }
+    }
+}
+
+
+.pizzas{
+    width: 100%;
+    padding: 40px;
+
+    .container__variedades--pizzas{
+        background-color: #191919;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 50px;
+        padding: 40px;
+    }
+}
+
+
+.variedad__pizza{
+    border: 1px solid $color-logo;
+    background-color: #2D2D2D;
+    text-align: center;
+    border-radius: 40px;
+    margin: 40px;
+    padding: 20px;
+    @include centrar--columna;
+    width: 300px;
+
+    p{
+        color: white;
+        font-weight: 800;
+        font-size: 2em;
+        background-color: #42cf01;
+        border-radius: 30px;
+        padding: 20px;
+    }
+
+    .variedad__img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .variedad__title{
+        font-family: map-get($map: $logo, $key: letra);
+        color: map-get($map: $logo, $key: color );
+        font-size: 2em;
+        padding: 20px 0;
+    }
+    
+}

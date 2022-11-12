@@ -1,0 +1,235 @@
+@import url("fonts/roboto/stylesheet.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/*  mapas  */
+$breakpoints: (
+    sm: 470px,
+    md: 700px,
+    lg: 876px
+);
+
+$logo: (
+    letra: 'Roper',
+    color: #FFA800,
+);
+
+/* Variables */ 
+$letra: 'Roper';
+$color-logo: #FFA800;
+$color-letras: #d1d1d1;
+
+/*  mixins  */
+
+@mixin logo{
+    font-family: $letra;
+    color: $color-logo;
+}
+
+@mixin centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin mediaq($breakpoint) {
+    @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #2D2D2D;
+}
+
+header{
+    @include mediaq(md){
+        position: fixed;
+        z-index: 10;
+    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2D2D2D;
+    width: 100%;
+    height: 80px;
+
+    .logo{
+        a{
+            text-decoration: none;
+        }
+        h1{
+            @include mediaq(md){
+                font-size: 38px
+            }
+            @include logo;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+    }
+    
+    nav{
+        width: 400px;
+        @include mediaq(md){
+            display: none;
+        }
+
+        .nav__menu{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            align-self: center;
+        }
+        .item{
+            text-decoration: none;
+            color: $color-letras;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+            &:hover{
+                background-color: $color-logo;
+                color: black;
+            }
+        }
+    }
+
+    .btm__pedir{
+        background-color: #36A900;
+        padding: 15px;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        @include mediaq(lg){
+            display: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+            padding-left: 10px;
+        }
+
+        img{
+            cursor: pointer;
+        }
+
+        &:hover{
+            background-color: #42cf01;
+        }
+    }
+}
+
+.menu__resp{
+    display: none;
+    @include mediaq(md){
+        display: flex;
+        z-index: 10;
+        
+        .menu__btn{
+            display: none;
+
+            &:checked ~ ul{
+                left: 0;
+            }
+        }
+
+        ul{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            background-color: #2D2D2D;
+            transition: all .5s;
+        }
+
+        li{
+            padding: 20px;
+            list-style: none;
+
+            a{
+                color: #d1d1d1;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+footer{
+    width: 100%;
+    background-color: #191919;
+    @include centrar;
+    flex-direction: column;
+    padding: 40px 0;
+    @include mediaq(lg){
+        text-align: center;
+        padding: 40px;
+        .footer__text{
+            flex-direction: column;
+            gap: 40px;
+    
+            .info__footer{
+                order: 2;
+            }
+        }
+        .copyr__footer{
+            padding-top: 40px;
+            padding-left: 0;
+            @include mediaq(md){
+                padding-right: 40px;
+            }
+        }
+    }
+
+    .footer__text{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .info__footer{
+        color: #d1d1d1;
+    }
+
+    .logo__footer{
+        text-align: center;
+    }
+
+    .logo__txt{
+        @include mediaq(sm){
+             font-size: 1.5em   
+        }
+        @include logo;
+        font-size: 30px;
+    }
+
+    .copyr__footer{
+        color: $color-letras;
+        padding-left: 55px;
+    }
+
+    .nav__footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item__footer{
+        padding: 10px 0;
+        color: $color-letras;
+    }
+}
+

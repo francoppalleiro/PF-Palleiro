@@ -1,0 +1,601 @@
+@import url("fonts/roboto/stylesheet.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+/*  mapas  */
+/* Variables */
+/*  mixins  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #2D2D2D; }
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2D2D2D;
+  width: 100%;
+  height: 80px; }
+  @media screen and (max-width: 700px) {
+    header {
+      position: fixed;
+      z-index: 10; } }
+  header .logo a {
+    text-decoration: none; }
+  header .logo h1 {
+    font-family: "Roper";
+    color: #FFA800;
+    font-size: 50px;
+    margin-bottom: 15px; }
+    @media screen and (max-width: 700px) {
+      header .logo h1 {
+        font-size: 38px; } }
+  header nav {
+    width: 400px; }
+    @media screen and (max-width: 700px) {
+      header nav {
+        display: none; } }
+    header nav .nav__menu {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      align-self: center; }
+    header nav .item {
+      text-decoration: none;
+      color: #d1d1d1;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      text-transform: uppercase;
+      font-weight: 600; }
+      header nav .item:hover {
+        background-color: #FFA800;
+        color: black; }
+  header .btm__pedir {
+    background-color: #36A900;
+    padding: 15px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center; }
+    @media screen and (max-width: 876px) {
+      header .btm__pedir {
+        display: none; } }
+    header .btm__pedir a {
+      text-decoration: none;
+      color: white;
+      padding-left: 10px; }
+    header .btm__pedir img {
+      cursor: pointer; }
+    header .btm__pedir:hover {
+      background-color: #42cf01; }
+
+.menu__resp {
+  display: none; }
+  @media screen and (max-width: 700px) {
+    .menu__resp {
+      display: flex;
+      z-index: 10; }
+      .menu__resp .menu__btn {
+        display: none; }
+        .menu__resp .menu__btn:checked ~ ul {
+          left: 0; }
+      .menu__resp ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        background-color: #2D2D2D;
+        transition: all .5s; }
+      .menu__resp li {
+        padding: 20px;
+        list-style: none; }
+        .menu__resp li a {
+          color: #d1d1d1;
+          text-decoration: none;
+          text-transform: uppercase; } }
+
+footer {
+  width: 100%;
+  background-color: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 0; }
+  @media screen and (max-width: 876px) {
+    footer {
+      text-align: center;
+      padding: 40px; }
+      footer .footer__text {
+        flex-direction: column;
+        gap: 40px; }
+        footer .footer__text .info__footer {
+          order: 2; }
+      footer .copyr__footer {
+        padding-top: 40px;
+        padding-left: 0; } }
+    @media screen and (max-width: 876px) and (max-width: 700px) {
+      footer .copyr__footer {
+        padding-right: 40px; } }
+  footer .footer__text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+  footer .info__footer {
+    color: #d1d1d1; }
+  footer .logo__footer {
+    text-align: center; }
+  footer .logo__txt {
+    font-family: "Roper";
+    color: #FFA800;
+    font-size: 30px; }
+    @media screen and (max-width: 470px) {
+      footer .logo__txt {
+        font-size: 1.5em; } }
+  footer .copyr__footer {
+    color: #d1d1d1;
+    padding-left: 55px; }
+  footer .nav__footer {
+    display: flex;
+    flex-direction: column; }
+  footer .item__footer {
+    padding: 10px 0;
+    color: #d1d1d1; }
+
+.banner__pizzas {
+  background-image: url("../images/fondo-pizza.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .banner__pizzas .pizzas__txt {
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .banner__pizzas .pizzas__txt .pizzas__title {
+      font-size: 6em;
+      color: transparent;
+      font-family: "Roper";
+      -webkit-text-stroke: 2px white; }
+      @media screen and (max-width: 470px) {
+        .banner__pizzas .pizzas__txt .pizzas__title {
+          font-size: 3em; } }
+
+.pizzas {
+  width: 100%;
+  padding: 40px; }
+  .pizzas .container__variedades--pizzas {
+    background-color: #191919;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 50px;
+    padding: 40px; }
+
+.variedad__pizza {
+  border: 1px solid #FFA800;
+  background-color: #2D2D2D;
+  text-align: center;
+  border-radius: 40px;
+  margin: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px; }
+  .variedad__pizza p {
+    color: white;
+    font-weight: 800;
+    font-size: 2em;
+    background-color: #42cf01;
+    border-radius: 30px;
+    padding: 20px; }
+  .variedad__pizza .variedad__img {
+    width: 200px;
+    height: 200px; }
+  .variedad__pizza .variedad__title {
+    font-family: "Roper";
+    color: #FFA800;
+    font-size: 2em;
+    padding: 20px 0; }
+
+.banner__empanadas {
+  width: 100%;
+  background-image: url("../images/empanadas-fondo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.banner__txt {
+  backdrop-filter: blur(4px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.banner__title {
+  font-size: 6em;
+  color: transparent;
+  font-family: "Roper";
+  -webkit-text-stroke: 2px white; }
+  @media screen and (max-width: 470px) {
+    .banner__title {
+      font-size: 3em; } }
+
+.empanadas {
+  width: 100%;
+  padding: 40px; }
+  .empanadas .container__variedades--empanadas {
+    background-color: #191919;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 50px;
+    padding: 40px; }
+    @media screen and (max-width: 470px) {
+      .empanadas .container__variedades--empanadas {
+        background-color: #2D2D2D; } }
+    .empanadas .container__variedades--empanadas .variedad__empanadas {
+      background-color: #191919;
+      border: 1px solid #FFA800;
+      background-color: #2D2D2D;
+      border-radius: 40px;
+      margin: 40px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      text-align: center; }
+      .empanadas .container__variedades--empanadas .variedad__empanadas p {
+        color: white;
+        font-weight: 800;
+        font-size: 2em;
+        background-color: #42cf01;
+        border-radius: 30px;
+        padding: 20px; }
+      .empanadas .container__variedades--empanadas .variedad__empanadas .empanadas__img {
+        height: 200px; }
+      .empanadas .container__variedades--empanadas .variedad__empanadas .empanadas__title {
+        font-family: "Roper";
+        color: #FFA800;
+        font-size: 2em;
+        padding: 20px 0; }
+
+.banner__bebidas {
+  width: 100%;
+  background-image: url("../images/fondos-bebidas.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .banner__bebidas .banner__txt {
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .banner__bebidas .banner__txt .banner__title {
+      font-size: 6em;
+      color: transparent;
+      font-family: "Roper";
+      -webkit-text-stroke: 2px white; }
+      @media screen and (max-width: 470px) {
+        .banner__bebidas .banner__txt .banner__title {
+          font-size: 3em; } }
+
+.bebidas {
+  width: 100%;
+  padding: 40px; }
+  @media screen and (max-width: 470px) {
+    .bebidas {
+      padding: 0; } }
+  .bebidas .container__variedades--bebidas {
+    background-color: #191919;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 50px; }
+    .bebidas .container__variedades--bebidas .variedad__bebidas {
+      border: 1px solid #FFA800;
+      background-color: #2D2D2D;
+      border-radius: 40px;
+      margin: 40px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      text-align: center; }
+      .bebidas .container__variedades--bebidas .variedad__bebidas p {
+        color: white;
+        font-weight: 800;
+        font-size: 2em;
+        background-color: #42cf01;
+        border-radius: 30px;
+        padding: 20px; }
+      .bebidas .container__variedades--bebidas .variedad__bebidas .bebidas__img {
+        height: 200px; }
+      .bebidas .container__variedades--bebidas .variedad__bebidas .bebidas__title {
+        font-family: "Roper";
+        color: #FFA800;
+        font-size: 2em;
+        padding: 20px 0; }
+
+.banner__pedidos {
+  width: 100%;
+  background-image: url("../images/envios-fondo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  @media screen and (max-width: 700px) {
+    .banner__pedidos {
+      padding-top: 40px; } }
+  .banner__pedidos .pedido {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    backdrop-filter: blur(3px); }
+    .banner__pedidos .pedido form {
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      background-color: #2D2D2D;
+      border-radius: 40px; }
+      .banner__pedidos .pedido form .completar {
+        background: none;
+        padding: 15px 0;
+        color: white;
+        border: 1px solid #d1d1d1;
+        margin-bottom: 10px; }
+        .banner__pedidos .pedido form .completar:placeholder-shown {
+          padding-left: 10px; }
+      @media screen and (max-width: 470px) {
+        .banner__pedidos .pedido form .options__form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 20px; } }
+      .banner__pedidos .pedido form .options__form .opciones {
+        margin: 20px 0 25px 0; }
+      .banner__pedidos .pedido form .options__form label {
+        text-transform: uppercase;
+        padding: 0 10px;
+        color: white; }
+      .banner__pedidos .pedido form textarea {
+        resize: none;
+        background: #191919;
+        border: none;
+        padding: 20px 0px 0px 20px;
+        color: #d1d1d1; }
+      .banner__pedidos .pedido form .enviar {
+        margin-top: 20px;
+        padding: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: #42cf01;
+        border: none;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 800; }
+
+.mapa {
+  width: 100%;
+  text-align: center; }
+  .mapa h2 {
+    padding: 40px;
+    margin-bottom: 20px;
+    font-family: "Roper";
+    color: #FFA800;
+    font-size: 2em;
+    background-color: #191919; }
+    @media screen and (max-width: 470px) {
+      .mapa h2 {
+        font-size: 1.5em; } }
+
+.banner {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/caminito-fondo-pizza.png");
+  width: 100%;
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  text-align: center; }
+  .banner .sucursales {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    @media screen and (max-width: 700px) {
+      .banner .sucursales {
+        display: none; } }
+  .banner .cards__sucursales {
+    display: flex; }
+    @media screen and (max-width: 876px) {
+      .banner .cards__sucursales {
+        display: none; } }
+    .banner .cards__sucursales .suc__card {
+      border: 1px solid #FFA800;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 40px;
+      padding: 40px;
+      margin: 20px; }
+      .banner .cards__sucursales .suc__card .card__title {
+        font-family: "Roper"; }
+        .banner .cards__sucursales .suc__card .card__title h2 {
+          color: #FFA800;
+          font-size: 2em; }
+        .banner .cards__sucursales .suc__card .card__title p {
+          font-size: 25px;
+          color: #36A900; }
+      .banner .cards__sucursales .suc__card .card__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .banner .cards__sucursales .suc__card .card__info p {
+          color: white;
+          text-transform: uppercase;
+          padding: 20px; }
+        .banner .cards__sucursales .suc__card .card__info img {
+          background-color: #FFA800;
+          padding: 15px;
+          border-radius: 20px;
+          cursor: pointer; }
+          .banner .cards__sucursales .suc__card .card__info img:hover {
+            background-color: #ffbb00; }
+  .banner .status {
+    background-color: #d1d1d1;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    cursor: pointer;
+    padding-right: 10px; }
+    @media screen and (max-width: 876px) {
+      .banner .status {
+        display: none; } }
+    .banner .status p {
+      color: black;
+      padding: 20px; }
+    .banner .status img {
+      width: 24px;
+      height: 24px; }
+
+.descuentos {
+  width: 100%; }
+  @media screen and (max-width: 700px) {
+    .descuentos {
+      display: none; } }
+  .descuentos .desc__container {
+    background-color: #310d38;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white; }
+    .descuentos .desc__container span {
+      font-size: 2.5em;
+      color: red;
+      -webkit-text-stroke: 0.4px white; }
+    .descuentos .desc__container h2 {
+      font-size: 2em;
+      text-transform: uppercase;
+      color: white; }
+    .descuentos .desc__container .desc__txt {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .descuentos .desc__container .desc__txt button {
+        border: none;
+        padding: 20px;
+        border: 1px solid white;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        background: none;
+        color: white;
+        cursor: pointer; }
+    .descuentos .desc__container .img__desc {
+      width: 150px;
+      height: 150px; }
+
+.btn__secciones {
+  background-color: #191919;
+  display: flex;
+  justify-content: center; }
+  @media screen and (max-width: 700px) {
+    .btn__secciones {
+      flex-direction: column; } }
+  .btn__secciones .btn__title {
+    color: #d1d1d1;
+    font-family: "Roper";
+    font-size: 20px;
+    padding: 40px; }
+    @media screen and (max-width: 700px) {
+      .btn__secciones .btn__title {
+        padding: 20px; } }
+    .btn__secciones .btn__title:not(:checked) {
+      border-bottom: 1px solid #d1d1d1; }
+  .btn__secciones .btn__check {
+    display: none; }
+    .btn__secciones .btn__check:checked + .btn__title {
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      background-color: #FFA800;
+      color: black;
+      border: none; }
+
+.secciones {
+  background-color: #191919;
+  width: 100%;
+  margin-bottom: 100px; }
+  .secciones .pizzas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .secciones .container__pizza {
+    border: 1px solid #FFA800;
+    margin: 40px;
+    background-color: #2D2D2D;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 2;
+    position: relative;
+    height: 300px; }
+    .secciones .container__pizza .oculto {
+      display: none; }
+    .secciones .container__pizza :hover .oculto {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      position: absolute;
+      top: 20px;
+      height: 200px;
+      width: 200px;
+      background-color: #191919;
+      color: #FFA800; }
+    .secciones .container__pizza .container__img {
+      width: 200px;
+      height: 200px; }
+    .secciones .container__pizza .container__title {
+      text-transform: uppercase;
+      color: #FFA800;
+      font-size: 24px;
+      padding-top: 10px; }

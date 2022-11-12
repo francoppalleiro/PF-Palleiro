@@ -1,0 +1,93 @@
+
+@mixin centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centrar--columna{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.banner__bebidas{
+    width: 100%;
+    background-image: url("../images/fondos-bebidas.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    @include centrar;
+    flex-wrap: wrap;
+
+    .banner__txt{
+        backdrop-filter: blur(2px);
+        width: 100%;
+        height: 100%;
+        @include centrar;
+
+        .banner__title{
+            @include mediaq(sm){
+                font-size: 3em;           
+            }
+            font-size: 6em;
+            color: transparent;
+            font-family: $letra;
+            -webkit-text-stroke: 2px white;
+        }
+    }
+}
+
+
+
+.bebidas{
+    width: 100%;
+    padding: 40px;
+    @include mediaq(sm){
+     padding: 0;           
+    }
+
+    .container__variedades--bebidas{
+        background-color: #191919;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 50px;
+
+        .variedad__bebidas{
+            border: 1px solid $color-logo;
+            background-color: #2D2D2D;
+            border-radius: 40px;
+            margin: 40px;
+            padding: 20px;
+            @include centrar--columna;
+            width: 300px;
+            text-align: center;
+
+            p{
+                color: white;
+                font-weight: 800;
+                font-size: 2em;
+                background-color: #42cf01;
+                border-radius: 30px;
+                padding: 20px;
+            }
+
+            .bebidas__img{
+                height: 200px;
+            }
+
+            .bebidas__title{
+                font-family: $letra;
+                color: $color-logo;
+                font-size: 2em;
+                padding: 20px 0;
+            }
+        }
+    }
+}
+

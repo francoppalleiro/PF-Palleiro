@@ -1,0 +1,89 @@
+@mixin centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centrar--columna{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner__empanadas{
+    width: 100%;
+    background-image: url("../images/empanadas-fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    @include centrar;
+    flex-wrap: wrap;
+}
+
+.banner__txt{
+    backdrop-filter: blur(4px);
+    width: 100%;
+    height: 100%;
+    @include centrar;
+}
+
+.banner__title{
+    @include mediaq(sm){
+     font-size: 3em;           
+    }
+    font-size: 6em;
+    color: transparent;
+    font-family: map-get($map: $logo, $key: letra);
+    -webkit-text-stroke: 2px white;
+}
+
+.empanadas{
+    width: 100%;
+    padding: 40px;
+
+    .container__variedades--empanadas{
+        @include mediaq(sm){
+         background-color: #2D2D2D;       
+        }
+        background-color: #191919;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 50px;
+        padding: 40px;
+
+        .variedad__empanadas{
+            background-color: #191919;
+            border: 1px solid $color-logo;
+            background-color: #2D2D2D;
+            border-radius: 40px;
+            margin: 40px;
+            padding: 20px;
+            @include centrar--columna;
+            width: 300px;
+            text-align: center;
+
+            p{
+                color: white;
+                font-weight: 800;
+                font-size: 2em;
+                background-color: #42cf01;
+                border-radius: 30px;
+                padding: 20px;
+            }
+
+            .empanadas__img{
+                height: 200px;
+            }
+            
+            .empanadas__title{
+                font-family: map-get($map: $logo, $key: letra);
+                color: map-get($map: $logo, $key: color);
+                font-size: 2em;
+                padding: 20px 0;
+            }
+        }
+    }
+}

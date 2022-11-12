@@ -1,0 +1,15 @@
+$breakpoints: (
+    sm: 470px,
+    md: 700px,
+    lg: 876px
+);
+
+@mixin mediaq($breakpoint) {
+    @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+@include mediaq(sm){
+    
+}

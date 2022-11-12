@@ -1,0 +1,245 @@
+@import "global";
+@import "pizzas";
+@import "empanadas";
+@import "bebidas";
+@import "encargar";
+@import "mediaq";
+
+.banner{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),url("../images/caminito-fondo-pizza.png");
+    width: 100%;
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    .sucursales{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include mediaq(md){
+            display: none;
+        }
+    }
+
+    .cards__sucursales{
+        display: flex;
+        @include mediaq(lg){
+            display: none;
+        }
+
+        .suc__card{
+            border: 1px solid $color-logo;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 40px;
+            padding: 40px;
+            margin: 20px;
+
+            .card__title{
+                font-family: $letra;
+        
+                h2{
+                    color: $color-logo;
+                    font-size: 2em;
+                }
+
+                p{
+                    font-size: 25px;
+                    color: #36A900;
+                }
+            }
+
+            .card__info{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                p{
+                    color: white;
+                    text-transform: uppercase;
+                    padding: 20px;
+                }
+
+                img{
+                    background-color: $color-logo;
+                    padding: 15px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    
+                    &:hover{
+                        background-color: #ffbb00;
+                    }
+                }
+            }
+        }
+    }
+
+    .status{
+        @include mediaq(lg){
+            display: none;
+        }
+        background-color: $color-letras;
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        cursor: pointer;
+        padding-right: 10px;
+
+        p{
+            color: black;
+            padding: 20px;
+        }
+
+        img{
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.descuentos{
+    @include mediaq(md){
+     display: none;       
+    }
+    width: 100%;
+
+    .desc__container{
+        background-color: rgb(49, 13, 56);
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 3px solid white;
+        border-bottom: 3px solid white;
+
+        span{
+            font-size: 2.5em;
+            color: red;
+            -webkit-text-stroke: 0.4px white;
+        }
+
+        h2{
+            font-size: 2em;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .desc__txt{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            button{
+                border: none;
+                padding: 20px;
+                border: 1px solid white;
+                text-transform: uppercase;
+                font-size: 1.5em;
+                background: none;
+                color: white;
+                cursor: pointer;
+            }
+        }
+ 
+        .img__desc{
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+
+.btn__secciones{
+    @include mediaq(md){
+     flex-direction: column;       
+    }
+    background-color: #191919;
+    display: flex;
+    justify-content: center;
+ 
+    .btn__title{
+        @include mediaq(md){
+         padding: 20px;   
+        }
+        color: $color-letras;
+        font-family: $letra;
+        font-size: 20px;
+        padding: 40px;
+
+        &:not(:checked){
+            border-bottom: 1px solid $color-letras;
+        }
+    }
+
+    .btn__check{
+        display: none;
+
+        &:checked + .btn__title{
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            background-color: $color-logo;
+            color: black;
+            border: none;
+        }
+    }
+}
+
+.secciones{
+    background-color: #191919;
+    width: 100%;
+    margin-bottom: 100px;
+
+    .pizzas{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .container__pizza{
+        border: 1px solid $color-logo;
+        margin: 40px;
+        background-color: #2D2D2D;
+        padding: 20px;
+        text-align: center;
+        border-radius: 20px;
+        z-index: 2;
+        position: relative;
+        height: 300px;
+
+        .oculto{
+            display: none;
+        }
+
+        :hover .oculto{
+            @include centrar;
+            border-radius: 20px;
+            position: absolute;
+            top: 20px;
+            height: 200px;
+            width: 200px;
+            background-color: #191919;
+            color: $color-logo;
+        }
+
+        .container__img{
+            width: 200px;
+            height: 200px;
+        }
+
+        .container__title{
+            text-transform: uppercase;
+            color: $color-logo;
+            font-size: 24px;
+            padding-top: 10px;
+        }
+    }
+}
