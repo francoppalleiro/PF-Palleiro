@@ -1,0 +1,840 @@
+@import url("fonts/roboto/stylesheet.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #2D2D2D;
+}
+
+:root{
+    --letra-logo: 'Roper';
+    --color-logo: #FFA800;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2D2D2D;
+    width: 100%;
+    height: 80px;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+h1{
+    font-family: var(--letra-logo);
+    color: var(--color-logo);
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.menu__resp{
+    display: none;
+}
+
+nav{
+    width: 400px;
+}
+
+.nav__menu{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-self: center;
+}
+
+.item{
+    text-decoration: none;
+    color: #d1d1d1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.item:hover{
+    background-color: var(--color-logo);
+    color: black;
+}
+
+.btm__pedir{
+    background-color: #36A900;
+    padding: 15px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.btm__pedir a{
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+}
+
+.btm__pedir img{
+    cursor: pointer;
+}
+
+.btm__pedir:hover{
+    background-color: #42cf01;
+}
+
+.banner{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),url("../images/caminito-fondo-pizza.jpg");
+    width: 100%;
+    height: 80vh;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.sucursales{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards__sucursales{
+    display: flex;
+}
+
+.suc__card{
+    border: 1px dotted var(--color-logo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+    padding: 40px;
+    margin: 20px;
+}
+
+.card__title{
+    font-family: var(--letra-logo);
+}
+
+.card__title h2{
+    font-size: 35px;
+    color: var(--color-logo)
+}
+
+.card__title p{
+    font-size: 25px;
+    color: #36A900;
+}
+
+.card__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__info p{
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.card__info img{
+    background-color: var(--color-logo);
+    padding: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card__info img:hover{
+    background-color: #ffbb00;
+}
+
+.status{
+    background-color: #d1d1d1;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.status p{
+    color: black;
+    padding: 20px;
+}
+
+.status img{
+    width: 24px;
+    height: 24px;
+}
+
+.descuentos{
+    width: 100%;
+}
+
+.desc__container{
+    background-color: rgb(49, 13, 56);
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+}
+
+.desc__container span{
+    font-size: 2.5em;
+    color: red;
+    -webkit-text-stroke: 0.4px white;
+}
+
+.desc__container h2{
+    font-size: 2em;
+}
+
+.desc__txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.desc__txt button{
+    border: none;
+    padding: 20px;
+    border: 1px solid white;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.img__desc{
+    width: 150px;
+    height: 150px;
+}
+
+.desc__container h2{
+    text-transform: uppercase;
+    color: white;
+}
+
+.btn__secciones{
+    background-color: #191919;
+    display: flex;
+    justify-content: center;
+}
+
+.btn__title:not(:checked){
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.btn__title{
+    color: #d1d1d1;
+    font-family: var(--letra-logo);
+    font-size: 20px;
+    padding: 40px;
+}
+
+.btn__check:checked + .btn__title{
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #FFA800;
+    color: black;
+    border: none;
+}
+
+.btn__check{
+    display: none;
+    
+}
+
+.secciones{
+    background-color: #191919;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.pizzas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container__pizza{
+    margin: 40px;
+    background-color: #2D2D2D;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 2;
+    position: relative;
+    height: 300px;
+}
+
+.oculto{
+    display: none;
+}
+
+.container__pizza:hover .oculto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    height: 200px;
+    width: 200px;
+    background-color: #191919;
+    color: var(--color-logo);
+}
+
+.container__img{
+    width: 200px;
+    height: 200px;
+}
+
+.container__title{
+    text-transform: uppercase;
+    color: var(--color-logo);
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+footer{
+    width: 100%;
+    background-color: #191919;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.footer__text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.info__footer{
+    color: #d1d1d1;
+}
+
+.logo__footer{
+    text-align: center;
+}
+
+.logo__txt{
+    font-family: var(--letra-logo);
+    color: var(--color-logo);
+    font-size: 40px;
+}
+
+.copyr__footer{
+    color: #d1d1d1;
+    padding-left: 55px;
+}
+
+.nav__footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.item__footer{
+    padding: 10px 0;
+    color: #d1d1d1;
+}
+
+
+/* -------------- Pizzas.html --------------- */
+
+.banner__pizzas{
+    width: 100%;
+    background-image: url("../images/fondo-pizza.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pizzas__txt{
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pizzas__title{
+    font-size: 6em;
+    color: transparent;
+    font-family: var(--letra-logo);
+    -webkit-text-stroke: 2px white;
+}
+
+.pizzas{
+    width: 100%;
+    padding: 40px;
+}
+
+.container__variedades--pizzas{
+    background-color: #191919;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 50px;
+    padding: 40px;
+}
+
+.variedad__pizza{
+    background-color: #2D2D2D;
+    text-align: center;
+    border-radius: 40px;
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 300px;
+}
+
+.variedad__pizza p{
+    color: white;
+    font-weight: 800;
+    font-size: 2em;
+    background-color: #42cf01;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.variedad__img{
+    width: 200px;
+    height: 200px;
+}
+
+.variedad__title{
+    font-family: var(--letra-logo);
+    color: var(--color-logo);
+    font-size: 2em;
+    padding: 20px 0;
+}
+
+
+
+
+/* ----------------- Empanadas.hmtl ----------------- */
+
+
+
+
+.banner__empanadas{
+    width: 100%;
+    background-image: url("../images/empanadas-fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.banner__txt{
+    backdrop-filter: blur(4px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner__title{
+    font-size: 6em;
+    color: transparent;
+    font-family: var(--letra-logo);
+    -webkit-text-stroke: 2px white;
+}
+
+.empanadas{
+    width: 100%;
+    padding: 40px;
+}
+
+.container__variedades--empanadas{
+    background-color: #191919;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 50px;
+    padding: 40px;
+}
+
+.variedad__empanadas{
+    background-color: #2D2D2D;
+    border-radius: 40px;
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    text-align: center;
+}
+
+.variedad__empanadas p{
+    color: white;
+    font-weight: 800;
+    font-size: 2em;
+    background-color: #42cf01;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.empanadas__img{
+    height: 200px;
+}
+
+.empanadas__title{
+    font-family: var(--letra-logo);
+    color: var(--color-logo);
+    font-size: 2em;
+    padding: 20px 0;
+}
+
+
+
+
+/* -------------------- Bebidas.html --------------- */
+
+
+.banner__bebidas{
+    width: 100%;
+    background-image: url("../images/fondos-bebidas.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.banner__txt{
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner__title{
+    font-size: 6em;
+    color: transparent;
+    font-family: var(--letra-logo);
+    -webkit-text-stroke: 2px white;
+}
+
+.bebidas{
+    width: 100%;
+    padding: 40px;
+}
+
+.container__variedades--bebidas{
+    background-color: #191919;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 50px;
+}
+
+.variedad__bebidas{
+    background-color: #2D2D2D;
+    border-radius: 40px;
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    text-align: center;
+}
+
+.variedad__bebidas p{
+    color: white;
+    font-weight: 800;
+    font-size: 2em;
+    background-color: #42cf01;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.bebidas__img{
+    height: 200px;
+}
+
+.bebidas__title{
+    font-family: var(--letra-logo);
+    color: var(--color-logo);
+    font-size: 2em;
+    padding: 20px 0;
+}
+
+
+/* ------------------ Pedidos.html ----------------- */
+
+.banner__pedidos{
+    width: 100%;
+    background-image: url("../images/envios-fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pedido{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    backdrop-filter: blur(3px);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #2D2D2D;
+    border-radius: 40px;
+}
+
+.completar{
+    background: none;
+    padding: 15px 0;
+    color: white;
+    border: 1px solid #d1d1d1;
+    margin-bottom: 10px;
+}
+
+.completar:placeholder-shown{
+    padding-left: 10px;
+}
+
+.opciones{
+    margin: 20px 0 25px 0;
+}
+
+.options__form label{
+    text-transform: uppercase;
+    padding: 0 10px;
+    color: white;
+}
+
+textarea{
+    resize: none;
+    background: #191919;
+    border: none;
+    padding: 20px 0px 0px 20px;
+    color: #d1d1d1;
+}
+
+.enviar{
+    margin-top: 20px;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #42cf01;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.mapa{
+    width: 100%;
+    text-align: center;
+}
+
+.mapa h2{
+    padding: 40px;
+    margin-bottom: 20px;
+    font-family: var(--letra-logo);
+    color: var(--color-logo);
+    font-size: 2em;
+    background-color: #191919;
+}
+
+
+/* ------------ MediasQ ----------------- */
+
+
+@media screen and (max-width: 876px){
+    .btm__pedir{
+        display: none;
+    }
+
+    .cards__sucursales{
+        width: 600px;
+    }   
+
+    footer{
+        text-align: center;
+        padding: 40px;
+    }
+
+    .footer__text{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .info__footer{
+        order: 2;
+    }
+
+    .copyr__footer{
+        padding-top: 40px;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .banner{
+        flex-direction: column;
+    }
+
+    header{
+        position: fixed;
+        z-index: 10;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .menu__resp{
+        display: flex;
+        z-index: 10;
+    }
+
+    .menu__btn{
+        display: none;
+
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        background-color: #2D2D2D;
+        transition: all .5s;
+    }
+
+    ul li{
+        padding: 20px;
+        list-style: none;
+    }
+
+    ul li a{
+        color: #d1d1d1;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .menu__btn:checked ~ ul{
+        left: 0;
+    }
+
+    .sucursales{
+        display: none;
+    }
+
+    .btn__title{
+        padding: 20px;
+    }
+
+    .btn__secciones{
+        flex-direction: column;
+    }
+
+    h1{
+        font-size: 36px;
+    }
+
+    .descuentos{
+        display: none;
+    }
+
+    .banner__pedidos{
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width:470px){
+
+    .options__form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .mapa h2{
+        font-size: 1.5em;
+    }
+
+    .logo__txt{
+        font-size: 1.5em;
+    }
+
+    .pizzas__title{
+        font-size: 3.5em;
+    }
+
+    .banner__title{
+        font-size: 3em;
+    }
+
+    .container__variedades--empanadas{
+        background-color: #2D2D2D;
+    }
+
+    .variedad__empanadas{
+        background-color: #191919;
+    }
+
+    .bebidas{
+        padding: 0;
+    }
+
+}
