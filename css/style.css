@@ -579,11 +579,13 @@ footer {
     position: relative;
     height: 300px; }
     .secciones .container__pizza .oculto {
+      color: white;
       display: none; }
-    .secciones .container__pizza :hover .oculto {
+    .secciones .container__pizza:hover .oculto {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       border-radius: 20px;
       position: absolute;
       top: 20px;
